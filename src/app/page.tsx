@@ -1,12 +1,22 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 gap-8">
+      <div className="relative w-48 h-48">
+        <Image
+          src="/images/sun.svg"
+          alt="Cheerful smiling sun"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
       <button
         onClick={() => setIsModalOpen(true)}
         className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg 
