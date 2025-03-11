@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2400" height="2400" viewBox="0 0 2400 2400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Regular cloud pattern -->
+    <g id="cloud">
+      <circle cx="0" cy="0" r="40" fill="white" fill-opacity="0.9"/>
+      <circle cx="-35" cy="10" r="35" fill="white" fill-opacity="0.9"/>
+      <circle cx="35" cy="10" r="35" fill="white" fill-opacity="0.9"/>
+      <circle cx="-60" cy="15" r="30" fill="white" fill-opacity="0.9"/>
+      <circle cx="60" cy="15" r="30" fill="white" fill-opacity="0.9"/>
+    </g>
+
+    <!-- Large cloud pattern -->
+    <g id="large-cloud">
+      <circle cx="0" cy="0" r="80" fill="white" fill-opacity="0.95"/>
+      <circle cx="-70" cy="20" r="70" fill="white" fill-opacity="0.95"/>
+      <circle cx="70" cy="20" r="70" fill="white" fill-opacity="0.95"/>
+      <circle cx="-120" cy="30" r="60" fill="white" fill-opacity="0.95"/>
+      <circle cx="120" cy="30" r="60" fill="white" fill-opacity="0.95"/>
+    </g>
+  </defs>
+
+  <!-- Sky background -->
+  <rect x="0" y="0" width="2400" height="2400" fill="#87CEEB"/>
+
+  <g transform="translate(1200,1200)">
+    <!-- Static sun body -->
+    <!-- Main sun circle -->
+    <circle cx="0" cy="0" r="360" fill="#FFD700"/>
+    
+    <!-- Animated sun rays -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1;1.2;1"
+        dur="1.5s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+      
+      <!-- Sun rays -->
+      <g stroke="#FFD700" stroke-width="80" stroke-linecap="round">
+        <!-- Vertical and horizontal rays -->
+        <line x1="0" y1="-412" x2="0" y2="-512"/>
+        <line x1="0" y1="412" x2="0" y2="512"/>
+        <line x1="412" y1="0" x2="512" y2="0"/>
+        <line x1="-412" y1="0" x2="-512" y2="0"/>
+        
+        <!-- Diagonal rays -->
+        <line x1="284" y1="-284" x2="356" y2="-356"/>
+        <line x1="-356" y1="356" x2="-284" y2="284"/>
+        <line x1="284" y1="284" x2="356" y2="356"/>
+        <line x1="-356" y1="-356" x2="-284" y2="-284"/>
+      </g>
+    </g>
+    
+    <!-- Static face -->
+    <!-- Eyes -->
+    <circle cx="-120" cy="-60" r="40" fill="#000000"/>
+    <circle cx="120" cy="-60" r="40" fill="#000000"/>
+    
+    <!-- Smile -->
+    <path d="M-120 100 Q0 220 120 100" fill="none" stroke="#000000" stroke-width="40" stroke-linecap="round"/>
+  </g>
+
+  <!-- Background clouds -->
+  <g>
+    <!-- First cloud group -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-400 0"
+        to="2800 0"
+        dur="30s"
+        repeatCount="indefinite"
+      />
+      <use href="#cloud" x="400" y="400" transform="scale(2)"/>
+      <use href="#cloud" x="1800" y="600" transform="scale(1.8)"/>
+      <use href="#cloud" x="1000" y="300" transform="scale(2.2)"/>
+    </g>
+    
+    <!-- Second cloud group (offset for seamless loop) -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-3600 0"
+        to="-400 0"
+        dur="30s"
+        repeatCount="indefinite"
+      />
+      <use href="#cloud" x="400" y="400" transform="scale(2)"/>
+      <use href="#cloud" x="1800" y="600" transform="scale(1.8)"/>
+      <use href="#cloud" x="1000" y="300" transform="scale(2.2)"/>
+    </g>
+  </g>
+
+  <!-- Large foreground cloud -->
+  <g>
+    <!-- First large cloud -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-800 0"
+        to="3200 0"
+        dur="40s"
+        repeatCount="indefinite"
+      />
+      <use href="#large-cloud" x="1200" y="1200" transform="scale(2.5)"/>
+    </g>
+    
+    <!-- Second large cloud (offset for seamless loop) -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-4800 0"
+        to="-800 0"
+        dur="40s"
+        repeatCount="indefinite"
+      />
+      <use href="#large-cloud" x="1200" y="1200" transform="scale(2.5)"/>
+    </g>
+  </g>
+</svg> 
