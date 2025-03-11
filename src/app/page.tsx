@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import HelloModal from '@/components/HelloModal';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,20 +27,10 @@ export default function Home() {
         Click me
       </button>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full m-4">
-            <h2 className="text-2xl font-bold mb-4">Hello World</h2>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="w-full mt-4 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
-            >
-              Dismiss
-            </button>
-          </div>
-        </div>
-      )}
+      <HelloModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 } 
